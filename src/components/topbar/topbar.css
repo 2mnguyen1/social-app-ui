@@ -37,9 +37,9 @@
     margin-left: 5px;
 }
 .search-input {
-    width: 100%;
     height: 90%;
     border: none;
+    border-radius: 5px;
 }
 .search-input:focus {
     outline: none;
@@ -53,9 +53,10 @@
     font-weight: bold;
 }
 .topbar-links {
-    width: 34%;
+    width: 50%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    font-size: 15px;
 }
 
 .topbar-icons {

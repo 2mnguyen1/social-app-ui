@@ -8,7 +8,7 @@ export default function Sidebar() {
         <ul className="sidebar-lists">
           <li className="sidebar-lists-items">
             <RssFeed className="sidebar-icon"/>
-            <span className="lists-items-info">Feed</span>
+            <span className="lists-items-info">Feeds</span>
           </li>
           <li className="sidebar-lists-items">
             <Chat className="sidebar-icon"/>

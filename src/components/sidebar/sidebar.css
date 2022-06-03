@@ -4,7 +4,6 @@
 }
 .sidebar-wrapper {
     height: 100%;
-    padding: 20px;
 }
 
 .sidebar-lists, .sidebar-friends-lists{
@@ -36,6 +35,6 @@
     border-radius: 50%;
 }
 .line-break {
-    margin-left: 30px;
+    margin: 0 30px;
     color: rgb(234, 234, 234);
 }
