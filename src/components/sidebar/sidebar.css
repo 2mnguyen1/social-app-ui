@@ -1,0 +1,40 @@
+.sidebar {
+    flex: 3;
+    font-weight: bold;
+}
+.sidebar-wrapper {
+    height: 100%;
+    padding: 20px;
+}
+
+.sidebar-lists, .sidebar-friends-lists{
+    padding: 0;
+}
+
+.sidebar-lists-items, .friends-lists {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 30px 0 25px 30px;
+}
+
+.sidebar-icon {
+    margin-right: 10px;
+    font-size: 35px !important;
+}
+
+.friends-lists-image {
+    width: 40px;
+    height: 40px;
+    background: #1877f2;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.extended-button .sidebar-icon {
+    background-color: rgb(234, 234, 234);
+    border-radius: 50%;
+}
+.line-break {
+    margin-left: 30px;
+    color: rgb(234, 234, 234);
+}
