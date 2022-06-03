@@ -1,0 +1,69 @@
+.share-container {
+    width: 100%;
+    height: 170px;
+    border-radius: 10px;
+    box-shadow: 1px 0px 14px -6px rgba(0, 0, 0, 0.97);
+    -webkit-box-shadow: 1px 0px 14px -6px rgba(0, 0, 0, 0.97);
+    -moz-box-shadow: 1px 0px 14px -6px rgba(0, 0, 0, 0.97);
+}
+.share-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.share-top {
+    width: 90%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+.share-image {
+    width: 35px;
+    height: 35px;
+    background-color: #1877f2;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.share-input {
+    width: 90%;
+    border: none;
+}
+.share-input:focus {
+    outline: none;
+}
+
+.share-bottom {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+}
+.share-options {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.share-option {
+    display: flex;
+    align-items: center;
+}
+.share-button {
+    height: 25px;
+    margin: 0 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    background-color: #1877f2;
+    cursor: pointer;
+}
+.share-button:active {
+    outline: none;
+    transform: scale(0.9);
+}
