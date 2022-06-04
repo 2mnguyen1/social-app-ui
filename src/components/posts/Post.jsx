@@ -1,15 +1,17 @@
 import "./post.css"
 import { MoreVert, FavoriteBorder } from '@mui/icons-material';
+import { Users } from '../../dummyData'
+export default function Post({post}) {
+    const user = Users.filter(user => user.id === post.userID)
 
-export default function Post() {
   return (
     <div className="post-component">
         <div className="post-wrapper">
             <div className="post-top">
                 <div className="post-topleft">
-                    <img className="post-profile-image" src="/assets/images/hinh1.JPG" alt=""/>
-                    <span className="post-author">Minh Nguyen</span>
-                    <span className="post-time">5 minutes ago</span>
+                    <img className="post-profile-image" src={user[0].profilePictures} alt=""/>
+                    <span className="post-author">{user[0].username}</span>
+                    <span className="post-time">{post.date}</span>
                 </div>
                 <div className="post-topright">
                     <MoreVert className="option-icon"/>
@@ -17,17 +19,17 @@ export default function Post() {
             </div>
             <div className="post-center">
                 <span className="post-text">
-                    This guy is so handsome!
+                    {post.description}
                 </span>
-                <img className="post-image" src="/assets/images/hinh1.JPG" alt=""/>
+                <img className="post-image" src={post.photo} alt=""/>
             </div>
             <div className="post-bottom">
                 <div className="post-bottom-left">
                     <FavoriteBorder className="like-icon"/>
-                    <span className="post-like-counter">23k</span>
+                    <span className="post-like-counter">{post.like}</span>
                 </div>
                 <div className="post-bottom-right">
-                    <span className="post-comment">3k comments</span>
+                    <span className="post-comment">{post.comment} comments</span>
                 </div>
             </div>
         </div>
