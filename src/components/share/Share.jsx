@@ -21,7 +21,7 @@ export default function Share() {
                         <span className="share-text">Tag</span>
                     </div>
                     <div className="share-option">
-                        <Room htmlColor="orange" className="share-icon"/>
+                        <Room htmlColor="green" className="share-icon"/>
                         <span className="share-text">Location</span>
                     </div>
                     <div className="share-option">
