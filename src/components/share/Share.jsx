@@ -7,7 +7,7 @@ export default function Share() {
     <div className="share-container">
         <div className="share-wrapper">
             <div className="share-top">
-                <div className="share-image"></div>
+                <img className="share-image" src="/assets/images/hinh1.JPG" alt=""/>
                 <input className="share-input" placeholder="What's on your mind, Minh?"></input>
             </div>
             <div className="share-bottom">

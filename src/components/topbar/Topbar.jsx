@@ -5,7 +5,7 @@ export default function Topbar() {
   return (
     <div className='topbar-container'>
         <div className='topbar-left'>
-          <span className='logo'>MặtSách</span>
+          <span className='logo'>Minh's MặtSách</span>
         </div>
         <div className='topbar-center'>
           <div className='search-bar'>
@@ -31,7 +31,7 @@ export default function Topbar() {
                   <Notifications />
                   <span className='icon-badge'>1</span>
                 </div>
-                <div className='topbar-img'></div>
+                <img className='topbar-img' alt="" src="/assets/images/hinh1.JPG"/>
           </div>
         </div>
     </div>

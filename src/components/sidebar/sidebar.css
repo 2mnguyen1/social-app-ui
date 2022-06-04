@@ -38,9 +38,9 @@
 .friends-lists-image {
     width: 40px;
     height: 40px;
-    background: #1877f2;
     border-radius: 50%;
     margin-right: 10px;
+    object-fit: cover;
 }
 .extended-button .sidebar-icon {
     background-color: rgb(234, 234, 234);

@@ -7,7 +7,7 @@ export default function Post() {
         <div className="post-wrapper">
             <div className="post-top">
                 <div className="post-topleft">
-                    <div className="post-profile-image"></div>
+                    <img className="post-profile-image" src="/assets/images/hinh1.JPG" alt=""/>
                     <span className="post-author">Minh Nguyen</span>
                     <span className="post-time">5 minutes ago</span>
                 </div>
@@ -19,15 +19,15 @@ export default function Post() {
                 <span className="post-text">
                     This guy is so handsome!
                 </span>
-                <div className="post-image"></div>
+                <img className="post-image" src="/assets/images/hinh1.JPG" alt=""/>
             </div>
             <div className="post-bottom">
                 <div className="post-bottom-left">
                     <FavoriteBorder className="like-icon"/>
-                    <span className="post-like-counter">23</span>
+                    <span className="post-like-counter">23k</span>
                 </div>
                 <div className="post-bottom-right">
-                    <span className="post-comment">3 comments</span>
+                    <span className="post-comment">3k comments</span>
                 </div>
             </div>
         </div>
