@@ -32,11 +32,13 @@
     height: 30px;
     background-color: #1877f2;
     border-radius: 50%;
+    cursor: pointer;
 }
 .post-author {
     font-size: 15px;
     font-weight: 500;
     margin: 0 10px;
+    cursor: pointer;
 }
 .post-time {
     font-size: small;
@@ -68,7 +70,18 @@
     display: flex;
     align-items: center;
 }
+.post-comment:hover {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
 .like-icon {
     margin-right: 2px;
-    color: #1877f2
+    color: #1877f2;
+    cursor: pointer;
 }
+.option-icon:hover {
+    border-radius: 50%;
+    background-color: rgb(203, 203, 203);
+    cursor: pointer;
+}
+

@@ -12,7 +12,7 @@ export default function Post() {
                     <span className="post-time">5 minutes ago</span>
                 </div>
                 <div className="post-topright">
-                    <MoreVert />
+                    <MoreVert className="option-icon"/>
                 </div>
             </div>
             <div className="post-center">
