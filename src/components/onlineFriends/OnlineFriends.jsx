@@ -1,3 +1,6 @@
+import './onlineFriends.css'
+
+
 export default function OnlineFriends({user}) {
   return (
     <div>

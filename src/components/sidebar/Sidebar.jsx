@@ -1,7 +1,15 @@
 import './sidebar.css'
 import { RssFeed, Chat, OndemandVideo, Group, Bookmarks, Help, Work ,Event, School, KeyboardArrowDown } from '@mui/icons-material';
+import CloseFriend from '../closeFriend/CloseFriend'
+import {Users} from '../../dummyData'
 
 export default function Sidebar() {
+  const closeFriendComponents = Users.map(user => {
+    return <CloseFriend
+      key={user.id}
+      user={user}
+    />
+  })
   return (
     <div className="sidebar">
       <div className="sidebar-wrapper">
@@ -51,22 +59,7 @@ export default function Sidebar() {
         <hr className="line-break"/>
 
         <ul className="sidebar-friends-lists">
-          <li className="friends-lists">
-            <img className="friends-lists-image" src="/assets/images/hinh1.JPG" alt=""/>
-            <span className="friends-lists-name">Minh Nguyen</span>
-          </li>
-          <li className="friends-lists">
-            <img className="friends-lists-image" src="/assets/images/hinh2.JPG" alt=""/>
-            <span className="friends-lists-name">Minh Le</span>
-          </li>
-          <li className="friends-lists">
-            <img className="friends-lists-image" src="/assets/images/hinh3.png" alt=""/>
-            <span className="friends-lists-name">Minh Pham</span>
-          </li>
-          <li className="friends-lists">
-            <img className="friends-lists-image" src="/assets/images/hinh4.png" alt=""/>
-            <span className="friends-lists-name">Minh Ho</span>
-          </li>
+          {closeFriendComponents}
           <li className="sidebar-lists-items extended-button">
             <KeyboardArrowDown className="sidebar-icon"/>
             <span className="sidebarButton">See more</span>
