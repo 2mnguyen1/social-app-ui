@@ -3,16 +3,16 @@ import OnlineFriends from '../onlineFriends/OnlineFriends'
 import {Users} from '../../dummyData'
 
 
-export default function Rightbar() {
+export default function Rightbar({profile}) {
   const OnlineFriendsComponents = Users.map(user => {
     return <OnlineFriends
       key={user.id}
       user={user}
       />
   })
-  return (
-    <div className="rightbar-component">
-      <div className="rightbar-wrapper">
+  function RightbarHome() {
+    return (
+      <>
         <div className="birthday-container">
           <img className="birthday-image" alt="" src="assets/images/gift.png"/>
           <span className="birthday-text">
@@ -22,6 +22,56 @@ export default function Rightbar() {
         <img className="rightbar-ads" alt="" src="assets/images/ads.jpg"/>
         <h4 className="rightbar-title">Contacts</h4>
         {OnlineFriendsComponents}
+      </>
+    )
+  }
+  function RightbarProfile() {
+    return (
+      <div>
+        <h4 className="rightbar-title">User information</h4>
+
+        <div className="rightbar-info">
+          <div className="rightbar-info-item">
+            <span className="rightbar-info-key">City: </span>
+            <span className="rightbar-info-value">Hue</span>
+          </div>
+          <div className="rightbar-info-item">
+            <span className="rightbar-info-key">From: </span>
+            <span className="rightbar-info-value">Vietnam</span>
+          </div>
+          <div className="rightbar-info-item">
+            <span className="rightbar-info-key">Relationship: </span>
+            <span className="rightbar-info-value">Single</span>
+          </div>
+        </div>
+
+        <h4 className="rightbar-title">User friends</h4>
+        <div className="rightbar-followings">
+          <div className="rightbar-following">
+            <img className="rightbar-following-image" src="assets/images/hinh1.JPG"/>
+            <span className="rightbar-following-name">Minh Nguyen</span>
+          </div>
+          <div className="rightbar-following">
+            <img className="rightbar-following-image" src="assets/images/hinh1.JPG"/>
+            <span className="rightbar-following-name">Minh Nguyen</span>
+          </div>
+          <div className="rightbar-following">
+            <img className="rightbar-following-image" src="assets/images/hinh1.JPG"/>
+            <span className="rightbar-following-name">Minh Nguyen</span>
+          </div>
+          <div className="rightbar-following">
+            <img className="rightbar-following-image" src="assets/images/hinh1.JPG"/>
+            <span className="rightbar-following-name">Minh Nguyen</span>
+          </div>
+        </div>
+
+      </div>
+    )
+  }
+  return (
+    <div className="rightbar-component">
+      <div className="rightbar-wrapper">
+        <RightbarProfile />
       </div>
     </div>
   )
