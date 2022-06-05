@@ -1,9 +1,25 @@
 import "./post.css"
-import { MoreVert, FavoriteBorder } from '@mui/icons-material';
+import { MoreVert, Favorite } from '@mui/icons-material';
 import { Users } from '../../dummyData'
-export default function Post({post}) {
-    const user = Users.filter(user => user.id === post.userID)
+import {useState} from 'react'
 
+
+export default function Post({post}) {
+    const [like, setLike] = useState(post.like)
+    const [isLike, setIsLike] = useState(false)
+    const user = Users.filter(user => user.id === post.userID)
+    function likeHandler() {
+        setIsLike(prev => !prev)
+        if (!isLike) {
+            setLike(prev => prev + 1)
+        } else {
+            setLike(prev => prev - 1)
+        }
+    }
+
+    const styles = {
+        color: isLike ? '#1877f2' : ''
+    }
   return (
     <div className="post-component">
         <div className="post-wrapper">
@@ -25,8 +41,8 @@ export default function Post({post}) {
             </div>
             <div className="post-bottom">
                 <div className="post-bottom-left">
-                    <FavoriteBorder className="like-icon"/>
-                    <span className="post-like-counter">{post.like}</span>
+                    <Favorite onClick={likeHandler} className="like-icon" style={styles}/>
+                    <span className="post-like-counter">{like}</span>
                 </div>
                 <div className="post-bottom-right">
                     <span className="post-comment">{post.comment} comments</span>
