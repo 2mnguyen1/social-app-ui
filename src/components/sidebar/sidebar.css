@@ -2,6 +2,7 @@
     flex: 3;
     font-weight: bold;
     overflow-y: scroll;
+    height: 100vh;
     position: sticky;
     top: 50px;
 }
