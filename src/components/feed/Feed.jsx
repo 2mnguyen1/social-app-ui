@@ -4,7 +4,6 @@ import Post from '../posts/Post'
 import { Posts } from '../../dummyData'
 
 export default function Feed() {
-
   const PostComponents = Posts.map(post => {
     return <Post
       key={post.id}

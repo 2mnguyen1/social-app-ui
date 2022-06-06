@@ -10,6 +10,7 @@ export default function Rightbar({profile}) {
       user={user}
       />
   })
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   function RightbarHome() {
     return (
       <>
@@ -48,19 +49,19 @@ export default function Rightbar({profile}) {
         <h4 className="rightbar-title">User friends</h4>
         <div className="rightbar-followings">
           <div className="rightbar-following">
-            <img className="rightbar-following-image" src="assets/images/hinh1.JPG" alt=""/>
+            <img className="rightbar-following-image" src={`${PF}images/hinh1.JPG`} alt=""/>
             <span className="rightbar-following-name">Minh Nguyen</span>
           </div>
           <div className="rightbar-following">
-            <img className="rightbar-following-image" src="assets/images/hinh1.JPG" alt=""/>
+            <img className="rightbar-following-image" src={`${PF}images/hinh1.JPG`} alt=""/>
             <span className="rightbar-following-name">Minh Nguyen</span>
           </div>
           <div className="rightbar-following">
-            <img className="rightbar-following-image" src="assets/images/hinh1.JPG" alt=""/>
+            <img className="rightbar-following-image" src={`${PF}images/hinh1.JPG`} alt=""/>
             <span className="rightbar-following-name">Minh Nguyen</span>
           </div>
           <div className="rightbar-following">
-            <img className="rightbar-following-image" src="assets/images/hinh1.JPG" alt=""/>
+            <img className="rightbar-following-image" src={`${PF}images/hinh1.JPG`} alt=""/>
             <span className="rightbar-following-name">Minh Nguyen</span>
           </div>
         </div>

@@ -20,12 +20,13 @@ export default function Post({post}) {
     const styles = {
         color: isLike ? '#1877f2' : ''
     }
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div className="post-component">
         <div className="post-wrapper">
             <div className="post-top">
                 <div className="post-topleft">
-                    <img className="post-profile-image" src={user[0].profilePictures} alt=""/>
+                    <img className="post-profile-image" src={PF + user[0].profilePictures} alt=""/>
                     <span className="post-author">{user[0].username}</span>
                     <span className="post-time">{post.date}</span>
                 </div>
@@ -37,7 +38,7 @@ export default function Post({post}) {
                 <span className="post-text">
                     {post.description}
                 </span>
-                <img className="post-image" src={post.photo} alt=""/>
+                <img className="post-image" src={PF + post.photo} alt=""/>
             </div>
             <div className="post-bottom">
                 <div className="post-bottom-left">
