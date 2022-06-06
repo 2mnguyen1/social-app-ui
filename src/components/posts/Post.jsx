@@ -1,13 +1,20 @@
 import "./post.css"
 import { MoreVert, Favorite } from '@mui/icons-material';
-import { Users } from '../../dummyData'
-import {useState} from 'react'
-
+import {useState, useEffect} from 'react'
+import axios from 'axios'
+import {format} from 'timeago.js'
+import {Link} from 'react-router-dom'
 
 export default function Post({post}) {
-    const [like, setLike] = useState(post.like)
+    const [like, setLike] = useState(post.likes.length)
     const [isLike, setIsLike] = useState(false)
-    const user = Users.filter(user => user.id === post.userID)
+    const [users, setUsers] = useState({})
+    // const user = users.filter(user => user.id === post.userID)
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const styles = {
+        color: isLike ? '#1877f2' : ''
+    }
+
     function likeHandler() {
         setIsLike(prev => !prev)
         if (!isLike) {
@@ -17,18 +24,25 @@ export default function Post({post}) {
         }
     }
 
-    const styles = {
-        color: isLike ? '#1877f2' : ''
-    }
-    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    useEffect(() => {
+        async function fetchUsers() {
+            const res = await axios.get(`users/${post.userID}`)
+            setUsers(res.data)
+        }
+        fetchUsers()
+    }, [post.userID])
+
+
   return (
     <div className="post-component">
         <div className="post-wrapper">
             <div className="post-top">
                 <div className="post-topleft">
-                    <img className="post-profile-image" src={PF + user[0].profilePictures} alt=""/>
-                    <span className="post-author">{user[0].username}</span>
-                    <span className="post-time">{post.date}</span>
+                    <Link to={`profile/${post.username}`}>
+                        <img className="post-profile-image" src={users.profilePicture || PF + 'images/noAvata.jpg'} alt=""/>
+                    </Link>
+                    <span className="post-author">{users.username}</span>
+                    <span className="post-time">{format(post.createdAt)}</span>
                 </div>
                 <div className="post-topright">
                     <MoreVert className="option-icon"/>
@@ -36,9 +50,9 @@ export default function Post({post}) {
             </div>
             <div className="post-center">
                 <span className="post-text">
-                    {post.description}
+                    {post.description || "No description"}
                 </span>
-                <img className="post-image" src={PF + post.photo} alt=""/>
+                <img className="post-image" src={PF + post.image} alt=""/>
             </div>
             <div className="post-bottom">
                 <div className="post-bottom-left">
