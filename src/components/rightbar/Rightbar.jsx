@@ -3,7 +3,7 @@ import OnlineFriends from '../onlineFriends/OnlineFriends'
 import {Users} from '../../dummyData'
 
 
-export default function Rightbar({profile}) {
+export default function Rightbar({user}) {
   const OnlineFriendsComponents = Users.map(user => {
     return <OnlineFriends
       key={user.id}
@@ -34,15 +34,18 @@ export default function Rightbar({profile}) {
         <div className="rightbar-info">
           <div className="rightbar-info-item">
             <span className="rightbar-info-key">City: </span>
-            <span className="rightbar-info-value">Hue</span>
+            <span className="rightbar-info-value">{user.city}</span>
           </div>
           <div className="rightbar-info-item">
             <span className="rightbar-info-key">From: </span>
-            <span className="rightbar-info-value">Vietnam</span>
+            <span className="rightbar-info-value">{user.birdth}</span>
           </div>
           <div className="rightbar-info-item">
             <span className="rightbar-info-key">Relationship: </span>
-            <span className="rightbar-info-value">Single</span>
+            <span className="rightbar-info-value">{user.relationship === 1 ? 'Single'
+              : user.relationship === 2 ? 'In a relationship'
+              : 'Complicated'}
+            </span>
           </div>
         </div>
 
@@ -72,7 +75,7 @@ export default function Rightbar({profile}) {
   return (
     <div className="rightbar-component">
       <div className="rightbar-wrapper">
-      {profile ? <RightbarProfile /> : <RightbarHome />}
+      {user ? <RightbarProfile /> : <RightbarHome />}
       </div>
     </div>
   )

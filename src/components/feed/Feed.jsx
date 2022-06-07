@@ -4,16 +4,18 @@ import Post from '../posts/Post'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-export default function Feed() {
+export default function Feed({username}) {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
     async function fetchPosts() {
-      const res = await axios.get("posts/timeline/627845f0db2e16d38e9c2b34")
+      const res = username
+        ? await axios.get("/posts/profile/" + username)
+        : await axios.get("/posts/timeline/627845f0db2e16d38e9c2b34");
       setPosts(res.data)
     }
     fetchPosts()
-  }, [])
+  }, [username])
 
   const PostComponents = posts.map(post => {
     return <Post
