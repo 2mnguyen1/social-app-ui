@@ -65,6 +65,8 @@
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
 
 .login-forgot {
