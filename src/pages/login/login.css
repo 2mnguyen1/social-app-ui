@@ -70,6 +70,9 @@
 .login-btn {
     background-color: #1775ee;
 }
+.login-btn:disabled {
+    cursor: not-allowed;
+}
 .register-button {
     background-color: #42b72a;
 }
