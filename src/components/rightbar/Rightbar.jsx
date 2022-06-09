@@ -52,19 +52,19 @@ export default function Rightbar({user}) {
         <h4 className="rightbar-title">User friends</h4>
         <div className="rightbar-followings">
           <div className="rightbar-following">
-            <img className="rightbar-following-image" src={`${PF}images/hinh1.JPG`} alt=""/>
+            <img className="rightbar-following-image" src={`${PF}hinh1.JPG`} alt=""/>
             <span className="rightbar-following-name">Minh Nguyen</span>
           </div>
           <div className="rightbar-following">
-            <img className="rightbar-following-image" src={`${PF}images/hinh1.JPG`} alt=""/>
+            <img className="rightbar-following-image" src={`${PF}hinh1.JPG`} alt=""/>
             <span className="rightbar-following-name">Minh Nguyen</span>
           </div>
           <div className="rightbar-following">
-            <img className="rightbar-following-image" src={`${PF}images/hinh1.JPG`} alt=""/>
+            <img className="rightbar-following-image" src={`${PF}hinh1.JPG`} alt=""/>
             <span className="rightbar-following-name">Minh Nguyen</span>
           </div>
           <div className="rightbar-following">
-            <img className="rightbar-following-image" src={`${PF}images/hinh1.JPG`} alt=""/>
+            <img className="rightbar-following-image" src={`${PF}hinh1.JPG`} alt=""/>
             <span className="rightbar-following-name">Minh Nguyen</span>
           </div>
         </div>

@@ -1,22 +1,22 @@
 export const Users = [
     {
         id: 1,
-        profilePictures: "images/hinh1.JPG",
+        profilePictures: "hinh1.JPG",
         username: "Minh Nguyen"
     },
     {
         id: 2,
-        profilePictures: "images/hinh2.JPG",
+        profilePictures: "hinh2.JPG",
         username: "Minh Le"
     },
     {
         id: 3,
-        profilePictures: "images/hinh3.png",
+        profilePictures: "hinh3.png",
         username: "Minh Pham"
     },
     {
         id: 4,
-        profilePictures: "images/hinh4.png",
+        profilePictures: "hinh4.png",
         username: "Minh Ho"
     },
 

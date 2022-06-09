@@ -28,8 +28,8 @@ export default function Profile() {
           <div className="profile-right">
             <div className="profile-right-top">
                 <div className="profile-cover">
-                    <img src={users.coverPictures || PF + "/images/defaultCover.png"} alt="" className="profile-cover-image"/>
-                    <img src={users.profilePicture || PF + "/images/noAvata.jpg"} alt="" className="profile-user-image"/>
+                    <img src={users.coverPictures || PF + "defaultCover.png"} alt="" className="profile-cover-image"/>
+                    <img src={users.profilePicture || PF + "noAvata.jpg"} alt="" className="profile-user-image"/>
                 </div>
                 <div className="profile-info">
                     <h4 className="profile-username">{users.username}</h4>

@@ -46,7 +46,7 @@ export default function Topbar() {
               src={
                 user.profilePicture
                   ? PF + user.profilePicture
-                  : PF + "images/noAvata.jpg"
+                  : PF + "noAvata.jpg"
               }
             />
           </Link>
