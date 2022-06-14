@@ -9,7 +9,7 @@ const INITIAL_STATE = {
     email: "qui@gmail.com",
     profilePicture: "",
     coverPicture: "",
-    followers: ["62784207c3166f2949c8a512"],
+    followers: [],
     followings: [],
   },
   isFetching: false,

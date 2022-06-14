@@ -12,7 +12,7 @@ export default function Rightbar({ user }) {
     return <OnlineFriends key={user.id} user={user} />;
   });
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  const { user: currentUser } = useContext(AuthContext);
+  const { user: currentUser, dispatch } = useContext(AuthContext);
 
   function RightbarHome() {
     return (
@@ -55,15 +55,23 @@ export default function Rightbar({ user }) {
           await axios.put(`/users/${user._id}/follow`, {
             userID: currentUser._id,
           });
+          dispatch({
+            type: "FOLLOW",
+            payload: user.id,
+          });
         } else {
           await axios.put(`/users/${user._id}/unfollow`, {
             userID: currentUser._id,
           });
+          dispatch({
+            type: "UNFOLLOW",
+            payload: user.id,
+          });
         }
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
-      setIsFollow(prev => !prev);
+      setIsFollow((prev) => !prev);
     }
 
     const friendsComponents = friends.map((friend) => {
