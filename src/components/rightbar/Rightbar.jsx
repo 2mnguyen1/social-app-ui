@@ -13,7 +13,9 @@ export default function Rightbar({ user }) {
   });
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const { user: currentUser, dispatch } = useContext(AuthContext);
-
+  const [isFollow, setIsFollow] = useState(
+    currentUser.followings.includes(user?._id)
+  );
   function RightbarHome() {
     return (
       <>
@@ -30,7 +32,7 @@ export default function Rightbar({ user }) {
     );
   }
   function RightbarProfile() {
-    const [isFollow, setIsFollow] = useState(false);
+
     const [friends, setFriends] = useState([]);
 
     useEffect(() => {
@@ -45,26 +47,23 @@ export default function Rightbar({ user }) {
       getFriends();
     }, [user._id]);
 
-    useEffect(() => {
-      setIsFollow(currentUser.followings.includes(user?._id));
-    }, [currentUser, user?._id]);
-
     async function handleClick() {
       try {
         if (isFollow) {
+          await axios.put(`/users/${user._id}/unfollow`, {
+            userID: currentUser._id,
+          });
+
+          dispatch({
+            type: "UNFOLLOW",
+            payload: user.id,
+          });
+        } else {
           await axios.put(`/users/${user._id}/follow`, {
             userID: currentUser._id,
           });
           dispatch({
             type: "FOLLOW",
-            payload: user.id,
-          });
-        } else {
-          await axios.put(`/users/${user._id}/unfollow`, {
-            userID: currentUser._id,
-          });
-          dispatch({
-            type: "UNFOLLOW",
             payload: user.id,
           });
         }
