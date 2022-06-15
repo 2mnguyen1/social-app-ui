@@ -41,12 +41,6 @@ export default function Share() {
       console.log(e);
     }
   };
-  function shareImageComponent() {
-    <div className="share-img-container">
-      <img className="share-img" src={URL.createObjectURL(file)} alt="" />
-      <Cancel className="share-cancel-img" onClick={() => setFile(null) }/>
-    </div>;
-  }
 
   return (
     <div className="share-container">
@@ -67,7 +61,18 @@ export default function Share() {
             ref={description}
           ></input>
         </div>
-        {file && shareImageComponent}
+
+        {file && (
+          <div className="share-img-container">
+            <img className="share-img" src={URL.createObjectURL(file)} alt="" />
+            <Cancel
+              className="share-cancel-img"
+              onClick={() => setFile(null)}
+            />
+          </div>
+        )}
+
+
         <form className="share-bottom" onSubmit={submitHandler}>
           <div className="share-options">
             <label htmlFor="file" className="share-option">
