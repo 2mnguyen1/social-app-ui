@@ -3,7 +3,15 @@ import AuthReducer from './AuthReducer'
 
 
 const INITIAL_STATE = {
-  user: null,
+  user: {
+    _id: "627845f0db2e16d38e9c2b34",
+    username: "qui",
+    email: "qui@gmail.com",
+    profilePicture: "",
+    coverPicture: "",
+    followers: [],
+    followings: [],
+  },
   isFetching: false,
   error: false,
 };
