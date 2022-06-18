@@ -1,6 +1,7 @@
 import "./messenger.css";
 import Topbar from "../../components/topbar/Topbar";
 import Conversation from "../../components/conversation/Conversation";
+import Message from "../../components/message/Message";
 
 export default function Messenger() {
   return (
@@ -18,7 +19,11 @@ export default function Messenger() {
         </div>
         <div className="chat-box">
           <div className="chat-box-wrapper">
-            <div className="chat-box-top"></div>
+            <div className="chat-box-top">
+              <Message />
+              <Message />
+              <Message />
+            </div>
             <div className="chat-box-bottom"></div>
           </div>
         </div>

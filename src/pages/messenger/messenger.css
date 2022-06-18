@@ -4,7 +4,7 @@
 }
 
 .chat-menu {
-  flex: 3.5;
+  flex: 3;
 }
 
 .chat-menu-input {
@@ -15,11 +15,11 @@
 }
 
 .chat-box {
-  flex: 5.5;
+  flex: 5;
 }
 
 .chat-online {
-  flex: 3;
+  flex: 4;
 }
 
 .chat-menu-wrapper,
