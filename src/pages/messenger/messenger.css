@@ -7,6 +7,13 @@
   flex: 3.5;
 }
 
+.chat-menu-input {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
 .chat-box {
   flex: 5.5;
 }
@@ -15,4 +22,8 @@
   flex: 3;
 }
 
-
+.chat-menu-wrapper,
+.chat-box-wrapper,
+.chat-online-wrapper {
+  padding: 10px;
+}
