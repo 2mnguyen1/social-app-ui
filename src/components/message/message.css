@@ -1,12 +1,12 @@
 .message-container {
   display: flex;
   flex-direction: column;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .message-top {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .message-img {
@@ -15,11 +15,27 @@
   border-radius: 50%;
   background-color: black;
   object-fit: cover;
-  margin-right: 10px;
+  margin: 0 10px;
 }
 .message-text {
   padding: 10px;
   border-radius: 20px;
   background-color: rgb(202, 202, 202);
-  max-width: 60%;
+  /* max-width: 60%; */
+  max-width: 30rem;
+}
+.message-bottom {
+    font-size: 15px;
+}
+.message-container.own {
+    display: flex;
+    align-items: flex-end;
+}
+
+.message-container.own .message-text{
+    color: white;
+    background-color: #1877f2;
+}
+.message-container.own .message-top {
+    flex-direction: row-reverse;
 }
