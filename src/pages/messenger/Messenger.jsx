@@ -21,14 +21,28 @@ export default function Messenger() {
           <div className="chat-box-wrapper">
             <div className="chat-box-top">
               <Message />
-              <Message own/>
+              <Message own />
+              <Message />
+              <Message own />
+              <Message />
+              <Message own />
+              <Message />
+              <Message own />
               <Message />
             </div>
-            <div className="chat-box-bottom"></div>
+            <div className="chat-box-bottom">
+              <textarea
+                placeholder="Aa"
+                className="chat-message-input"
+              ></textarea>
+              <button className="chat-submit-button">Send</button>
+            </div>
           </div>
         </div>
         <div className="chat-online">
-          <div className="chat-online-wrapper">online</div>
+          <div className="chat-online-wrapper">
+            
+          </div>
         </div>
       </div>
     </>

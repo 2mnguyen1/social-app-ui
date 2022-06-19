@@ -17,6 +17,38 @@
 .chat-box {
   flex: 5;
 }
+.chat-box-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-box-top {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.chat-box-bottom {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-message-input {
+  width: 80%;
+  height: 90px;
+  padding: 10px;
+}
+
+.chat-submit-button {
+  width: 70px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #1877f2;
+}
 
 .chat-online {
   flex: 4;
