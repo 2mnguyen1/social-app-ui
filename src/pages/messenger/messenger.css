@@ -16,6 +16,7 @@
 
 .chat-box {
   flex: 5;
+  position: relative;
 }
 .chat-box-wrapper {
   height: 100%;
@@ -58,4 +59,13 @@
 .chat-box-wrapper,
 .chat-online-wrapper {
   padding: 10px;
+}
+
+.no-conversation-text {
+  position: absolute;
+  top: 1%;
+  font-size: 50px;
+  color: grey;
+  text-align: center;
+  cursor: default;
 }
