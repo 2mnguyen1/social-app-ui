@@ -3,7 +3,7 @@ import Topbar from "../../components/topbar/Topbar";
 import Conversation from "../../components/conversation/Conversation";
 import Message from "../../components/message/Message";
 import ChatOnline from "../../components/chatOnline/ChatOnline";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
@@ -15,7 +15,7 @@ export default function Messenger() {
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
   const { user } = useContext(AuthContext);
-
+  const scrollRef = useRef();
   useEffect(() => {
     const getConversations = async () => {
       try {
@@ -73,11 +73,16 @@ export default function Messenger() {
         console.log(err);
       }
     }
+    useEffect(() => {
+      scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [messages]);
     return (
       <div className="chat-box-wrapper">
         <div className="chat-box-top">
           {messages.map((m) => (
-            <Message message={m} own={m.sender === user._id} />
+            <div ref={scrollRef}>
+              <Message message={m} own={m.sender === user._id} key={m._id} />
+            </div>
           ))}
         </div>
         <div className="chat-box-bottom">
