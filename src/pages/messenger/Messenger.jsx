@@ -5,6 +5,9 @@ import Message from "../../components/message/Message";
 import ChatOnline from "../../components/chatOnline/ChatOnline";
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { IconButton } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
+
 import axios from "axios";
 
 export default function Messenger() {
@@ -25,9 +28,13 @@ export default function Messenger() {
     getConversations();
   }, [user._id]);
 
+  const currentConvStyles = {
+    backgroundColor: currentChat ? "rgb(241, 241, 241)" : "",
+  };
+
   const conversationComponents = conversations.map((con) => {
     return (
-      <div onClick={() => setCurrentChat(con)}>
+      <div onClick={() => setCurrentChat(con)} style={currentConvStyles}>
         <Conversation conversation={con} currentUser={user} key={con._id} />
       </div>
     );
@@ -46,6 +53,26 @@ export default function Messenger() {
   }, [currentChat]);
 
   function ShowChats() {
+    const [newMessages, setNewMessages] = useState("");
+    function handleInput(e) {
+      const { value } = e.target;
+      setNewMessages(value);
+    }
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const message = {
+        sender: user._id,
+        text: newMessages,
+        conversationID: currentChat._id,
+      };
+
+      try {
+        const res = await axios.post("/messages/", message);
+        setMessages([...messages, res.data]);
+      } catch (err) {
+        console.log(err);
+      }
+    }
     return (
       <div className="chat-box-wrapper">
         <div className="chat-box-top">
@@ -54,8 +81,21 @@ export default function Messenger() {
           ))}
         </div>
         <div className="chat-box-bottom">
-          <textarea placeholder="Aa" className="chat-message-input"></textarea>
-          <button className="chat-submit-button">Send</button>
+          <input
+            placeholder="Aa"
+            className="chat-message-input"
+            value={newMessages}
+            onChange={handleInput}
+          />
+          <IconButton
+            color="primary"
+            size="small"
+            className="chat-submit-button"
+            onClick={handleSubmit}
+            disabled={newMessages ? false : true}
+          >
+            <SendIcon />
+          </IconButton>
         </div>
       </div>
     );

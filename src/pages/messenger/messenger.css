@@ -37,20 +37,26 @@
 }
 
 .chat-message-input {
-  width: 80%;
-  height: 90px;
+  width: 90%;
+  height: 20px;
   padding: 10px;
+  border: none;
+  background-color: rgb(222, 222, 222);
+  border-radius: 2rem;
+  font-size: 17px;
+}
+.chat-message-input:focus {
+  outline: none;
 }
 
 .chat-submit-button {
-  width: 70px;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
+  border-radius: 10px !important;
   color: white;
   background-color: #1877f2;
 }
-
+.chat-submit-button:hover {
+  background-color: #1877f2;
+}
 .chat-online {
   flex: 4;
 }
