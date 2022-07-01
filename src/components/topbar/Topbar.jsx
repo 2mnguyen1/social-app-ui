@@ -31,15 +31,16 @@ export default function Topbar() {
             <span className="icon-badge">1</span>
           </div>
           <div className="topbar-icons-items">
-            <Chat />
-            <span className="icon-badge">1</span>
+            <Link to="/messenger">
+              <Chat/>
+              <span className="icon-badge">1</span>
+            </Link>
           </div>
           <div className="topbar-icons-items">
             <Notifications />
             <span className="icon-badge">1</span>
           </div>
-          <Link to={ `/profile/${user.username}` }>
-
+          <Link to={`/profile/${user.username}`}>
             <img
               className="topbar-img"
               alt=""
