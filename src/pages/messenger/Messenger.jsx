@@ -22,14 +22,13 @@ export default function Messenger() {
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
-    socket.on("getMessage"),
-      (data) => {
-        setArrivalMessage({
-          sender: data.senderID,
-          text: data.text,
-          createdAt: Date.now(),
-        });
-      };
+    socket.current.on("getMessage", (data) => {
+      setArrivalMessage({
+        sender: data.senderID,
+        text: data.text,
+        createdAt: Date.now(),
+      });
+    });
   }, []);
 
   useEffect(() => {
