@@ -15,19 +15,34 @@ export default function Messenger() {
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
+  const [arrivalMessage, setArrivalMessage] = useState(null);
   const socket = useRef();
   const { user } = useContext(AuthContext);
   const scrollRef = useRef();
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
-  }, [])
+    socket.on("getMessage"),
+      (data) => {
+        setArrivalMessage({
+          sender: data.senderID,
+          text: data.text,
+          createdAt: Date.now(),
+        });
+      };
+  }, []);
+
+  useEffect(() => {
+    arrivalMessage &&
+      currentChat?.members.includes(arrivalMessage.sender) &&
+      setMessages((prev) => [...prev, arrivalMessage]);
+  }, [arrivalMessage, currentChat]);
 
   useEffect(() => {
     socket.current.emit("sendUser", user._id);
-    socket.current.on("getUsers", users => {
-      console.log(users)
-    })
+    socket.current.on("getUsers", (users) => {
+      console.log(users);
+    });
   }, [user]);
 
   useEffect(() => {
@@ -80,7 +95,9 @@ export default function Messenger() {
         conversationID: currentChat._id,
       };
 
-      const recieverID = currentChat.members.find(member => member !== user._id)
+      const recieverID = currentChat.members.find(
+        (member) => member !== user._id
+      );
 
       socket.current.emit("sendMessage", {
         senderID: user._id,
