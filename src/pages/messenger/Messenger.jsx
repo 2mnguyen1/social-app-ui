@@ -7,6 +7,7 @@ import { useContext, useState, useEffect, useRef } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
+import { io } from "socket.io-client";
 
 import axios from "axios";
 
@@ -14,8 +15,15 @@ export default function Messenger() {
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
+  const [socket, setSocket] = useState(null);
   const { user } = useContext(AuthContext);
   const scrollRef = useRef();
+
+
+  useEffect(() => {
+    setSocket(io("ws://localhost:8900"));
+  }, [])
+
   useEffect(() => {
     const getConversations = async () => {
       try {
