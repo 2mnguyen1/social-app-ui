@@ -23,9 +23,9 @@ export default function Conversation({ conversation, currentUser }) {
     <div className="conversation-container">
       <img
         className="conversation-img"
-        // src={
-        //   user.profilePicture ? PF + user.profilePicture : PF + "noAvata.jpg"
-        // }
+        src={
+          user?.profilePicture ? PF + user.profilePicture : PF + "noAvata.jpg"
+        }
         alt=""
       />
       <span className="conversation-name">{user ? user.username : "You are lonely!"}</span>
